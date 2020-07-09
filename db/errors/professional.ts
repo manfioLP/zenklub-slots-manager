@@ -1,0 +1,3 @@
+module.exports = {
+  NAME_REQUIRED: 'MONGOOSE ERROR NOT IMPLEMENTED'
+}

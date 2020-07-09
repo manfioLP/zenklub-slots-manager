@@ -1,0 +1,73 @@
+service:
+  name: zenklub-slots-manager
+# app and org for use with dashboard.serverless.com
+#app: your-app-name
+#org: your-org-name
+
+custom:
+  webpack:
+    webpackConfig: ./webpack.config.js
+    includeModules: true
+
+# Add the serverless-webpack plugin
+plugins:
+  - serverless-webpack
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  apiGateway:
+    minimumCompressionSize: 1024 # Enable gzip compression for responses > 1 KB
+  environment:
+    AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1
+
+functions:
+  createSlot:
+    handler: handlers/slot/create.create
+    events:
+      - http:
+          path: slot
+          method: post
+          cors: true
+
+  createAgenda:
+    handler: handlers/agenda/create.create
+    events:
+      - http:
+          path: agenda
+          method: post
+          cors: true
+
+  getSlot:
+    handler: handlers/slot/get.get
+    events:
+      - http:
+          path: slot/{id}
+          method: get
+          cors: true
+
+  listSlots:
+    handler: handlers/slot/list.list
+    events:
+      - http:
+          path: slot
+          method: get
+          cors: true
+
+  bookSlot:
+    handler: handlers/agenda/book.book
+    events:
+      - http:
+          path: agenda/{slotId}
+          method: put
+          cors: true
+
+  deleteSlot:
+    handler: handlers/slot/delete.delete
+    events:
+      - http:
+          path: slot/{id}
+          method: delete
+          cors: true
+
