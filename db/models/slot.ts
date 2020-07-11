@@ -24,6 +24,16 @@ const SlotSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.String,
     trim: true,
     required: [true, slot.MINUTES_REQUIRED]
+  },
+  weekday: {
+    type: mongoose.Schema.Types.String,
+    trim: true,
+    required: [true, slot.WEEKDAY_REQUIRED]
+  },
+  month: {
+    type: mongoose.Schema.Types.String,
+    trim: true,
+    required: [true, slot.MONTH_REQUIRED]
   }
 }, { timestamps: true });
 
