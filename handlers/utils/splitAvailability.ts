@@ -1,6 +1,6 @@
 import {compareTimeObject} from './compareTimeObject';
 
-export const splitAvailabilites = (schedule: {to: string, from: string}) => {
+export const splitAvailability = (schedule: {to: string, from: string}) => {
     const [initH, initM] = schedule.from.split(':');
     const [endH, endM, endHour=Number(endH), endMinute=Number(endM)] = schedule.to.split(':');
 
@@ -8,7 +8,7 @@ export const splitAvailabilites = (schedule: {to: string, from: string}) => {
     let initHour=Number(initH)
 
     const availabilityArray = [{hour: initHour, minute: initMinute}];
-    while (compareTimeObject(initHour, initMinute, endHour, endMinute)){
+    while (compareTimeObject(initHour, initMinute, endHour, endMinute, true)){
         initMinute += 30
         if (initMinute >= 60) {
             initHour++;
