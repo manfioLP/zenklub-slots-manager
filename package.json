@@ -1,5 +1,15 @@
 {
   "name": "zenklub-slots-manager",
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "coverageThreshold": {
+      "./db/index.js": {
+        "branches": 0,
+        "statements": 0
+      }
+    }
+  },
   "version": "1.0.0",
   "description": "Serverless webpack example using Typescript",
   "main": "handler.js",
@@ -7,6 +17,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@types/jest": "^26.0.4",
     "dotenv": "^8.2.0",
     "mongoose": "^5.9.22",
     "source-map-support": "^0.5.10"
@@ -15,6 +26,7 @@
     "@types/aws-lambda": "^8.10.17",
     "@types/node": "^10.12.18",
     "fork-ts-checker-webpack-plugin": "^3.0.1",
+    "jest": "^26.1.0",
     "serverless-offline": "^6.4.0",
     "serverless-webpack": "^5.2.0",
     "ts-loader": "^5.3.3",
