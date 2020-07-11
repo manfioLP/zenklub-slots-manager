@@ -33,4 +33,4 @@ SlotSchema.pre('save', next => {
   next();
 });
 
-module.exports = mongoose.model('Slot', SlotSchema);
+export default mongoose.model('Slot', SlotSchema);

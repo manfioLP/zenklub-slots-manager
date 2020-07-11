@@ -6,7 +6,7 @@ let isConnected;
 require('dotenv').config({path: path.resolve('.env')});
 const connectionString = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PWD}@cluster0-txkes.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
 
-const connectToDatabase = () => {
+export const connectToDatabase = () => {
   if (isConnected) {
     console.log('[WARM] using existing database connection');
     return Promise.resolve();
@@ -19,12 +19,7 @@ const connectToDatabase = () => {
     });
 };
 
-const closeConnection = () => {
+export const closeConnection = () => {
   isConnected = false;
   return mongoose.disconnect()
-};
-
-module.exports = {
-  connectToDatabase,
-  closeConnection
 };
