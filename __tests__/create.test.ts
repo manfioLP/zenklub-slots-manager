@@ -31,8 +31,8 @@ describe('Create', () => {
 
     test('Basic create', async (done) => {
         const result = await handler({body: JSON.stringify(reqBody)}, context);
-        const fracture= JSON.parse(result.body)
-        expect(fracture).toHaveProperty('recordNumber', '123456')
+        const slot= JSON.parse(result.body)
+        expect(slot).toHaveProperty('month', 2)
         done();
     })
 
