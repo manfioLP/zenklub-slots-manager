@@ -7,17 +7,22 @@ module.exports.update = (event, context, callback) => {
     context.callbackWaitsForEmptyEventLoop = false;
 
     // retrieve professionalId
+    const { professionalId: string } = event.pathParameters.professionalId;
+    // retrieve patient booker name
     // prepare identifier - hour+minute + '-' + professionalId
 
     // get identifier
+    const { slotId: string } = event.pathParameters.id;
     // verify if exists
 
     // verify previous and next availability
 
-    // set book
+    // set booked to true and prev/next available to false
+    // set booker name
 
     connectToDatabase()
         .then(() => {
+            Slot.findById()
             Slot.findByIdAndUpdate(event.pathParameters.id, JSON.parse(event.body),
                 { new: true, runValidators: true })
                 .then(fracture => callback(null, {

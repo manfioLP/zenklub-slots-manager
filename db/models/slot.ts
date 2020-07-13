@@ -19,6 +19,10 @@ const SlotSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.Boolean,
     default: false
   },
+  bookerName: {
+    type: mongoose.Schema.Types.String,
+    trim: true
+  },
   hour: {
     type: mongoose.Schema.Types.String,
     trim: true,
