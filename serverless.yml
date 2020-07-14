@@ -68,3 +68,43 @@ functions:
           method: delete
           cors: true
 
+  createProfessional:
+    handler: handlers/professional/create.create
+    events:
+      - http:
+          path: professional
+          method: post
+          cors: true
+
+  getProfessional:
+    handler: handlers/professional/get.get
+    events:
+      - http:
+          path: professional/{id}
+          method: get
+          cors: true
+
+  updateProfessional:
+    handler: handlers/professional/update.update
+    events:
+      - http:
+          path: professional/{id}
+          method: put
+          cors: true
+
+  listProfessional:
+    handler: handlers/professional/list.list
+    events:
+      - http:
+          path: professional
+          method: get
+          cors: true
+
+  deleteProfessional:
+    handler: handlers/professional/delete.remove
+    events:
+      - http:
+          path: professional/{id}
+          method: delete
+          cors: true
+
