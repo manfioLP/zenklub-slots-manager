@@ -35,11 +35,12 @@ jobs:
       - run:
           name: run tests with code coverage
           command: |
-#            uggly part of installing sls for testing
             sudo npm install -g --unsafe-perm serverless
             sls webpack
             npm i jest
             npm test --coverage
+#           uggly part here of installing sls for testing
+
 
   deploy:
     working_directory: ~/v1-zenklub-slot-manager
