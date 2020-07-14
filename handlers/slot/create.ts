@@ -1,9 +1,10 @@
 'use strict';
 
 import { connectToDatabase } from '../../db';
-const { Slot } = require('../../db/models');
+// const {Slot} = require('../../db/models');
+import { Slot } from '../../db/models'
 
-module.exports.create = (event, context, callback) => {
+export const create = (event, context, callback) => {
     context.callbackWaitsForEmptyEventLoop = false;
 
     connectToDatabase()
