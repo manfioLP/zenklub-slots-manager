@@ -35,6 +35,7 @@ jobs:
       - run:
           name: run tests with code coverage
           command: |
+            sudo npm install -g --unsafe-perm serverless
             sls webpack
             npm i jest
             npm test --coverage
