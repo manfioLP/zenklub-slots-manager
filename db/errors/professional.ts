@@ -1,3 +1,3 @@
 module.exports = {
-  NAME_REQUIRED: 'MONGOOSE ERROR NOT IMPLEMENTED'
+  NAME_REQUIRED: 'Professional name is required'
 }
