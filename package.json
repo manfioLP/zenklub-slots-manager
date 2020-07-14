@@ -4,10 +4,6 @@
     "testEnvironment": "node",
     "collectCoverage": true,
     "coverageThreshold": {
-      "./db/index.js": {
-        "branches": 0,
-        "statements": 0
-      }
     }
   },
   "version": "1.0.0",
@@ -30,7 +26,8 @@
     "serverless-webpack": "^5.2.0",
     "typescript": "^3.2.4",
     "webpack": "^4.29.0",
-    "webpack-node-externals": "^1.7.2"
+    "webpack-node-externals": "^1.7.2",
+    "promisify": "0.0.3"
   },
   "author": "The serverless webpack authors (https://github.com/elastic-coders/serverless-webpack)",
   "license": "MIT"

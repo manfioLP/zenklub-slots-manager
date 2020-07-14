@@ -1,10 +1,13 @@
+const mongoose = require('mongoose')
+
 const {promisify} = require('util');
-const lambda = require( '../handlers/create');
+const lambda = require('../.webpack/service/handlers/slot/create');
 const handler = promisify(lambda.create);
 
-const {closeConnection} = require('../db')
-
-// TODO: set environment for jest with mongoose
+// helper function to finish the test
+const closeConnection = () => {
+    return mongoose.disconnect()
+};
 
 const context = {
     "awsRequestId": "ckb8j7s4q0002qjr9azyw2xmv",
@@ -18,13 +21,17 @@ const context = {
     "memoryLimitInMB": "128"
 }
 
+const hour = Math.floor(Math.random()*22)
+const day = Math.floor(Math.random()*30)
+const year = Number('20' + Math.floor(Math.random()*90))
 const reqBody = {
     professionalId: '5edc301ea480e94c8efd914a',
-    hour: 8,
-    minute: 30,
+    hour,
+    minutes: 30,
     weekday: 1,
+    day,
     month: 2,
-    year: 2020
+    year
 }
 
 describe('Create', () => {
@@ -32,7 +39,7 @@ describe('Create', () => {
     test('Basic create', async (done) => {
         const result = await handler({body: JSON.stringify(reqBody)}, context);
         const slot= JSON.parse(result.body)
-        expect(slot).toHaveProperty('month', 2)
+        expect(slot).toHaveProperty('month', "2")
         done();
     })
 
