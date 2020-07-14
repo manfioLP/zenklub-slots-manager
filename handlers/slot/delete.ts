@@ -1,9 +1,10 @@
 'use strict'
 
 import { connectToDatabase } from '../../db';
-const { Slot } = require('../../db/models');
+import { Slot } from '../../db/models'
+// const { Slot } = require('../../db/models');
 
-module.exports.delete = (event, context, callback) => {
+export const remove = (event, context, callback) => {
     context.callbackWaitsForEmptyEventLoop = false;
     // TODO: verify how wil be the delete method
     // TODO: add rollback from delete

@@ -11,7 +11,7 @@ const list = (event, context, callback) => {
     // TODO: add query by professional
     context.callbackWaitsForEmptyEventLoop = false;
 
-    const {page=1, limit=10, skip=page*limit, lm=+limit} = { ...event.queryStringParameters }
+    const {page=0, limit=10, skip=page*limit, lm=+limit} = { ...event.queryStringParameters }
 
     connectToDatabase()
         .then(() => {

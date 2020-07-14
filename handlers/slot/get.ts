@@ -3,7 +3,7 @@
 import { connectToDatabase } from '../../db';
 const { Slot } = require('../../db/models');
 
-const get = (event, context, callback) => {
+export const get = (event, context, callback) => {
     context.callbackWaitsForEmptyEventLoop = false;
 
     connectToDatabase()
@@ -23,8 +23,4 @@ const get = (event, context, callback) => {
                     body: JSON.stringify({msg:'Could not fetch the slot.', err})
                 }));
         });
-};
-
-module.exports = {
-    get
 };

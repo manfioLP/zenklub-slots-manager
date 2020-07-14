@@ -1,2 +1,7 @@
-export const Slot = require('./slot');
-export const Professional = require('./professional');
+import Slot from './slot'
+import Professional from './professional'
+
+export {
+  Slot,
+  Professional
+}

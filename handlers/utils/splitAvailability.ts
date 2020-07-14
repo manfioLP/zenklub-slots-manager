@@ -8,7 +8,7 @@ export const splitAvailability = (schedule: {to: string, from: string}) => {
     let initHour=Number(initH)
 
     const availabilityArray = [{hour: initHour, minute: initMinute}];
-    while (compareTimeObject(initHour, initMinute, endHour, endMinute, true)){
+    while (!compareTimeObject(initHour, initMinute, endHour, endMinute, true)){
         initMinute += 30
         if (initMinute >= 60) {
             initHour++;
@@ -17,5 +17,5 @@ export const splitAvailability = (schedule: {to: string, from: string}) => {
         availabilityArray.push({hour: initHour, minute: initMinute})
     }
 
-    return availabilityArray;
+    return availabilityArray.slice(0, availabilityArray.length-2);
 }

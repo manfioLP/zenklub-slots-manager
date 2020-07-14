@@ -1,8 +1,8 @@
 module.exports = {
-  PROFESSIONAL_REQUIRED: 'MONGOOSE ERROR NOT IMPLEMENTED',
-  HOUR_REQUIRED: 'MONGOOSE ERROR NOT IMPLEMENTED',
-  MINUTES_REQUIRED: 'MONGOOSE ERROR NOT IMPLEMENTED',
-  WEEKDAY_REQUIRED: 'MONGOOSE ERROR NOT IMPLEMENTED',
-  MONTH_REQUIRED: 'MONGOOSE ERROR NOT IMPLEMENTED',
-  DATE_REQUIRED: 'MONGOOSE ERROR NOT IMPLEMENTED',
+  PROFESSIONAL_REQUIRED: 'You must inform the professional ID!',
+  MINUTES_REQUIRED: 'Minutes from Slot is required!',
+  WEEKDAY_REQUIRED: 'You must inform the weekday, i.e: FRIDAY',
+  MONTH_REQUIRED: 'you must inform the month on JS Date format!',
+  HOUR_REQUIRED: 'Hour from Slot is required!',
+  DAY_REQUIRED: 'you must inform the month-day!',
 };
