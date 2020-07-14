@@ -35,7 +35,7 @@ jobs:
       - run:
           name: run tests with code coverage
           command: |
-            ls
+            sls webpack
             npm i jest
             npm test --coverage
 
