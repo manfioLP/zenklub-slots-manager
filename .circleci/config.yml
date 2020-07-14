@@ -35,6 +35,7 @@ jobs:
       - run:
           name: run tests with code coverage
           command: |
+            ls
             npm i jest
             npm test --coverage
 
