@@ -9,4 +9,4 @@ const ProfessionalSchema = new mongoose.Schema({
   }
 }, { timestamps: true});
 
-export default mongoose.model('Professional', ProfessionalSchema);
+export default mongoose.models.Professional || mongoose.model('Professional', ProfessionalSchema);
