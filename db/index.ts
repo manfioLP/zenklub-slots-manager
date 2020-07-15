@@ -5,7 +5,7 @@ let isConnected;
 
 require('dotenv').config({path: path.resolve('.env')});
 const connectionString = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0-txkes.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
-
+console.log(connectionString)
 export const connectToDatabase = () => {
   if (isConnected) {
     console.log('[WARM] using existing database connection');
