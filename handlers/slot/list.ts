@@ -11,11 +11,18 @@ const list = (event, context, callback) => {
     // TODO: add query by professional
     context.callbackWaitsForEmptyEventLoop = false;
 
-    const {page=0, limit=10, skip=page*limit, lm=+limit} = { ...event.queryStringParameters }
+  const {page=0, limit=10, skip=page*limit, lm=+limit} = { ...event.queryStringParameters }
+  const {professionalId='', weekday='', month=''} = { ...event.queryStringParameters }
+
+    const query = {
+      ...professionalId && {professionalId},
+      ...weekday && {weekday},
+      ...month && {month}
+    };
 
     connectToDatabase()
         .then(() => {
-            Slot.find().limit(lm).skip(skip)
+            Slot.find(query).limit(lm).skip(skip).sort({timeSorter: 1})
                 .then(fractures => {
                     const response = {
                         page,
