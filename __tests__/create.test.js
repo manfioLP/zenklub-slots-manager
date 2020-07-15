@@ -30,7 +30,7 @@ const reqBody = {
     minutes: 30,
     weekday: 1,
     day,
-    month: 2,
+    month: "2",
     year
 }
 
