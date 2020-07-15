@@ -66,6 +66,8 @@ describe('Create', () => {
 
     afterAll(done => {
         closeConnection();
+        closeConnection();
+        console.log('closing connection')
         done();
     })
 });
