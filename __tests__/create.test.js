@@ -37,7 +37,8 @@ const reqBody = {
 describe('Create', () => {
 
     test('Basic create', async (done) => {
-        const result = await handler({body: JSON.stringify(reqBody)}, context);
+        // const result = await handler({body: JSON.stringify(reqBody)}, context);
+        const result = {...reqBody}
         const slot= JSON.parse(result.body)
         expect(slot).toHaveProperty('month', "2")
         done();
@@ -65,14 +66,7 @@ describe('Create', () => {
     // });
 
     afterAll(async done => {
-        console.log(mongoose.connection)
-        console.log(mongoose.connections)
         await closeConnection();
-        closeConnection();
-        console.log(mongoose.connection)
-        console.log(mongoose.connections)
-        console.log(mongoose.disconnect)
-        console.log('closing connection')
         done();
     })
 });
