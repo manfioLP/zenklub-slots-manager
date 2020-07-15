@@ -3,8 +3,7 @@
   "jest": {
     "testEnvironment": "node",
     "collectCoverage": true,
-    "coverageThreshold": {
-    }
+    "coverageThreshold": {}
   },
   "version": "1.0.0",
   "description": "Serverless webpack example using Typescript",
@@ -13,6 +12,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "copy-webpack-plugin": "^6.0.3",
     "dotenv": "^8.2.0",
     "mongoose": "^5.9.19",
     "path": "^0.12.7",
