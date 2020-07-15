@@ -64,9 +64,14 @@ describe('Create', () => {
     //   expect(patient).associatedTraumaInjury.toHaveLength(2)
     // });
 
-    afterAll(done => {
+    afterAll(async done => {
+        console.log(mongoose.connection)
+        console.log(mongoose.connections)
+        await closeConnection();
         closeConnection();
-        closeConnection();
+        console.log(mongoose.connection)
+        console.log(mongoose.connections)
+        console.log(mongoose.disconnect)
         console.log('closing connection')
         done();
     })
