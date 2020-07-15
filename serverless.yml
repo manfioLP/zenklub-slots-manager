@@ -8,6 +8,7 @@ custom:
     packager: 'npm'
 
 plugins:
+  - serverless-dotenv-plugin
   - serverless-webpack
   - serverless-offline
 

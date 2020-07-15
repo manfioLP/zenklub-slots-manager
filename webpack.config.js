@@ -41,7 +41,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new CopyPlugin(['.env'])
     // new ForkTsCheckerWebpackPlugin({
     //   eslint: true,
     //   eslintOptions: {
