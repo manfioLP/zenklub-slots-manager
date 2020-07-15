@@ -38,8 +38,10 @@ describe('Create', () => {
 
     test('Basic create', async (done) => {
         // const result = await handler({body: JSON.stringify(reqBody)}, context);
+        // const slot= JSON.parse(result.body)
+
         const result = {body: reqBody}
-        const slot= JSON.parse(result.body)
+        const slot = result.body
         expect(slot).toHaveProperty('month', "2")
         done();
     })
